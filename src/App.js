@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import './App.css';
-import AddForm from './components/Phonebook/AddForm';
-import ContactsList from './components/Phonebook/ContactsList';
-import FilterContacts from './components/Phonebook/FilterContacts';
+// import './App.css';
+import AddForm from './components/Phonebook/AddForm/AddForm';
+import ContactsList from './components/Phonebook/ContactsList/ContactsList';
+import FilterContacts from './components/Phonebook/FilterContacts/FilterContacts';
 import { v4 as uuidv4 } from 'uuid';
 
 class App extends Component {
@@ -21,36 +21,26 @@ class App extends Component {
 
   };
 
-  // addContact = ({name, number}) => {
-  //   if (this.state.contacts.find(contact => contact.name === name)) {
-  //     alert(`${name} is already in contacts!!!`);
-  //     return;
-  //   }
-  //   const contact = {
-  //     id: uuidv4(),
-  //     name,
-  //     number,
-  //   };
-  //   this.setState(({ contacts }) => ({
-  //     contacts: [contact, ...contacts],
-  //   }));
-  // };
-
   addContact = ({ name, number }) => {
+    if (
+      this.state.contacts.find(
+        contact => contact.name.toLowerCase() === name.toLowerCase(),
+      )
+    ) {
+      alert(`${name} is already in contacts!!!`);
+      return;
+    }
     const contact = {
       id: uuidv4(),
       name,
       number,
     };
-
-    this.setState(prevState => ({
-      contacts: this.state.contacts.find(contact => contact.name === name) ?
-        alert(`${name} is alredy exists`) : [contact, ...prevState.contacts] 
-    }))
+    this.setState(({ contacts }) => ({
+      contacts: [contact, ...contacts],
+    }));
   };
 
   
-
   changeFilter = e => {
     this.setState({filter: e.target.value});
   }

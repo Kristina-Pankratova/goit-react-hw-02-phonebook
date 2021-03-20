@@ -1,0 +1,18 @@
+.filterLabel {
+    margin: auto;
+    margin-bottom: 10px;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.filterLabel input {
+
+    margin-top: 5px;
+}
+
+.filterLabel input:focus {
+    outline: none;
+    border: 1px solid cornflowerblue;
+}

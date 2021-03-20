@@ -1,11 +1,11 @@
-
+import s from './ContactsList.module.css'
 
  export default function ContactsList ({contacts, onDeleteContact}) {
     
         return (
-            <ul>
+            <ul className={s.contactList} >
                 {contacts.map(({ id, name, number }) => (
-                    <li key={id}>
+                    <li className={s.contactItem} key={id}>
                         {name} {number} 
                         <button type="button" onClick={() => onDeleteContact(id)}>Delete</button>
                     </li>
