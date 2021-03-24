@@ -1,7 +1,7 @@
 .filterLabel {
-    margin: auto;
+    margin-left: 60px;
     margin-bottom: 10px;
-    width: 200px;
+    width: 340px;
     display: flex;
     flex-direction: column;
     align-items: center;

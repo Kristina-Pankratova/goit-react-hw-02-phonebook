@@ -1,4 +1,5 @@
 import { Component } from "react";
+import PropTypes from 'prop-types';
 import s from './AddForm.module.css'
 
 
@@ -57,4 +58,12 @@ class AddForm extends Component {
 
 
 export default AddForm;
+
+AddForm.propTypes = {
+    onSubmit: PropTypes.func,
+    onSubmits: PropTypes.func,
+    onChange: PropTypes.func,
+    name: PropTypes.string,
+    number: PropTypes.number
+}
 

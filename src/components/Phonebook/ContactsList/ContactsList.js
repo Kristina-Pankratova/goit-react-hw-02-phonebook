@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import s from './ContactsList.module.css'
 
  export default function ContactsList ({contacts, onDeleteContact}) {
@@ -15,3 +16,13 @@ import s from './ContactsList.module.css'
     
 }
 
+ContactsList.prototype = {
+    contacts: PropTypes.arrayOf(
+        PropTypes.shape({
+           id: PropTypes.string.isRequired,
+           name: PropTypes.string.isRequired,
+           number: PropTypes.number.isRequired
+       })
+    ).isRequired,
+    onDeleteContact: PropTypes.func
+}

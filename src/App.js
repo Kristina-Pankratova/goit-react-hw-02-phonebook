@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import './App.css';
 import AddForm from './components/Phonebook/AddForm/AddForm';
 import ContactsList from './components/Phonebook/ContactsList/ContactsList';
 import FilterContacts from './components/Phonebook/FilterContacts/FilterContacts';
